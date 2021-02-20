@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public List<Interactive> interactives = new List<Interactive>();
+    public PlayerIntField f;
     public Rigidbody rb;
     public float maxMove;
     public float accMove;
@@ -20,17 +20,20 @@ public class PlayerController : MonoBehaviour
         accMove = accMove > 0 ? accMove : 1;
     }
 
+    void Update(){
+        if(Input.GetKeyDown("space"))
+        {
+            f.tryInteract(); 
+        }
+    }
+
     void FixedUpdate()
     {
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
         
-        if(Input.GetKeyDown("space")&&interactives.Count!=0)
-        {
-            interactives[0].Interacted(); 
-        }
+        
 
-        interactives.Clear();
         input = new Vector2(horizontal, vertical);
         Vector3 velocity = rb.velocity;
 
@@ -52,13 +55,6 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = velocity;
     }
-    void onTriggerStay(Collider other)
-    {
-        transform.position = new Vector3(10, 10, 0);
-        if (other.gameObject.layer == LayerMask.NameToLayer("Interactive Npc"))
-        {
-            
-            //interactives.Add(other.gameObject.GetComponent<Interactive>());
-        }
-    }
+    
+    
 }

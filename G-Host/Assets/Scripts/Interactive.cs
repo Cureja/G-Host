@@ -5,7 +5,7 @@ using UnityEngine;
 public class Interactive : MonoBehaviour
 {
     public SpriteRenderer sprite;
-
+    public int a = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,7 @@ public class Interactive : MonoBehaviour
 
     public void Interacted()
     {
+        a=2;
         sprite.color = Color.red;
     }
 }
