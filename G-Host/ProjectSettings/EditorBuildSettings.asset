@@ -11,10 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/StillTest.unity
     guid: 0de8e949b01bc614ea8d5e9a4c25c476
-  - enabled: 1
-    path: Assets/Scenes/Stills/GrammaStill.unity
-    guid: 285485b55858a9948b4f9101c7ee90f4
-  - enabled: 1
-    path: Assets/Scenes/Stills/PondStill.unity
-    guid: 227572d0c9c832848982062cd2d82652
   m_configObjects: {}

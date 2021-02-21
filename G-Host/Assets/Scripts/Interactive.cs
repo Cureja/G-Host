@@ -10,11 +10,12 @@ public class Interactive : MonoBehaviour
     public bool Possessed = false;
     public Vector3 InterPos;
     public PlayerController player;
+    public List<dialogueStruct> ghostDialogue;
     public List<dialogueStruct> dialogue;
     public string scene;
     public bool isDoor = false;
     public bool isPossessable = true;
-
+    public bool solved = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,9 +41,18 @@ public class Interactive : MonoBehaviour
             player.Possession();
             sprite.color = Color.green;
             Possessed = true;
+            player.possessed = gameObject.GetComponent<Interactive>();
             InterPos = transform.position;
             gameObject.transform.parent.gameObject.GetComponent<Collider>().enabled = false;
         } 
+        else if(player.Possessioning && dialogue.Count > 0 && !player.InDialogue) {
+            dialogueController.LoadDialogue(dialogue);
+            player.InDialogue = true;
+        } 
+        else if(!player.Possessioning && dialogue.Count > 0 && !player.InDialogue) {
+            dialogueController.LoadDialogue(ghostDialogue);
+            player.InDialogue = true;
+        }
         else if(player.Possessioning == true && dialogue.Count > 0 && !player.InDialogue) {
             dialogueController.LoadDialogue(dialogue);
             player.InDialogue = true;

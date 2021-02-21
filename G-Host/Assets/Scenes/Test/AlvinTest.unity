@@ -273,6 +273,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 938821981943278116, guid: 75140ee8ee08f5c45a2741567cc200c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75140ee8ee08f5c45a2741567cc200c0, type: 3}
 --- !u!1 &423944109 stripped
@@ -752,10 +757,12 @@ MonoBehaviour:
   Possessed: 0
   InterPos: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  ghostDialogue: []
   dialogue: []
   scene: 
   isDoor: 0
   isPossessable: 1
+  solved: 0
 --- !u!54 &1666361695
 Rigidbody:
   m_ObjectHideFlags: 0
