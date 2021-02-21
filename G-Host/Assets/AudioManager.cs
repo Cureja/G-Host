@@ -19,36 +19,26 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void playMeow()
+    public void playLongMeow()
     {
         audioSource.PlayOneShot(audioClips[0]);
     }
 
-    public void playShootShotgun()
+    public void playShortMeow()
     {
         audioSource.PlayOneShot(audioClips[1]);
     }
 
-    public void playGameMusic()
+
+    public void playRoomMusic()
+        //pause the town song when playing the room music ig lol
     {
-        audioSource.PlayOneShot(audioClips[17]);
+        audioSource.PlayOneShot(audioClips[3]);
     }
 
-    public void playZombie()
+    public void playTownMusic()
     {
-        int audioClipNumber = Random.Range(4, 5);
-        audioSource.PlayOneShot(audioClips[audioClipNumber]);
-    }
-
-    public void playMainMenu()
-    {
-        audioSource.PlayOneShot(audioClips[8]);
-    }
-
-    public void playButton()
-    {
-        int audioClipNumber = Random.Range(13, 16);
-        audioSource.PlayOneShot(audioClips[audioClipNumber]);
+        audioSource.PlayOneShot(audioClips[1]);
     }
 
     public void pauseMusic()
