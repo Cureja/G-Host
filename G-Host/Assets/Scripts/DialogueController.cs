@@ -44,10 +44,13 @@ public class DialogueController : MonoBehaviour
                     Conditions.conditions.cutscenes[cutsceneid] = true;
                     currentScript = successScript;
                     Conditions.conditions.possessed = false;
-                    
+
                 }
                 else {
                     currentScript = failedScript;
+                    if(failedScript.Count == 0) {
+                        currentScript = successScript;
+                    } 
                 }
             } else {
                 if(Conditions.conditions.isCat) {
