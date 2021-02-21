@@ -40,6 +40,7 @@ public class Interactive : MonoBehaviour
             player.Possession();
             sprite.color = Color.green;
             Possessed = true;
+            player.possessed = gameObject.GetComponent<Interactive>();
             InterPos = transform.position;
             gameObject.transform.parent.gameObject.GetComponent<Collider>().enabled = false;
         } 
