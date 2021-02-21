@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerIntField : MonoBehaviour
 {
     public List<Interactive> interactives = new List<Interactive>();
+    public PlayerController player;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,17 @@ public class PlayerIntField : MonoBehaviour
     {
         if (interactives.Count!=0)
         {
-            interactives[0].Interacted(); 
+            interactives[0].Interacted();
+            player.Possession();
+
         }
     } 
+    
+    public void tryUnpossess()
+    {
+        if(interactives.Count!=0)
+        {
+            interactives[0].Unpossessed();
+        }
+    }
 }
