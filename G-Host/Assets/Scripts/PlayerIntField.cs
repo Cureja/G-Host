@@ -6,6 +6,7 @@ public class PlayerIntField : MonoBehaviour
 {
     public List<Interactive> interactives = new List<Interactive>();
     public PlayerController player;
+    private Interactive possessed;
     
     // Start is called before the first frame update
     void Start()
@@ -30,19 +31,20 @@ public class PlayerIntField : MonoBehaviour
 
     public void tryInteract()
     {
-        if (interactives.Count!=0)
-        {
-            interactives[0].Interacted();
-            player.Possession();
-
+        foreach(Interactive i in interactives) {
+            i.Interacted();
         }
+        // if (interactives.Count!=0)
+        // {
+        //     interactives[0].Interacted();
+        // }
     } 
     
-    public void tryUnpossess()
-    {
-        if(interactives.Count!=0)
-        {
-            interactives[0].Unpossessed();
-        }
-    }
+    // public void tryUnpossess()
+    // {
+    //     if(interactives.Count!=0)
+    //     {
+    //         interactives[0].Unpossessed();
+    //     }
+    // }
 }

@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactives: []
+  player: {fileID: 938821980692004816}
 --- !u!1 &938821980692004819
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +140,8 @@ MonoBehaviour:
   maxMove: 7.64
   accMove: 3.91
   dampMove: 14.2
+  PlayerPos: {x: 0, y: 0, z: 0}
+  Possessioning: 0
 --- !u!1 &938821981943278116
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,6 @@ public class dialogueStruct
         nameText = name;
         bodyText = body;
     }
-
 }
 
 public class DialogueController : MonoBehaviour
@@ -26,38 +25,45 @@ public class DialogueController : MonoBehaviour
     public PlayerController player;
     public Sprite[] icons;
     
-    private List<dialogueStruct> currentScript;
+    public bool isActive = false;
+    private List<dialogueStruct> currentScript = new List<dialogueStruct>();
 
+    public GameObject active;
     // Start is called before the first frame update
     void Start()
     {
-        List<dialogueStruct> a = new List<dialogueStruct>();
-        a.Add(new dialogueStruct(0, "adf", "wow hi"));
-        a.Add(new dialogueStruct(0, "bob", "yo whats up"));
-        a.Add(new dialogueStruct(0, "adf", "yo fsadfaksdfjk up"));
-        currentScript = a;
+
+        // List<dialogueStruct> a = new List<dialogueStruct>();
+        // a.Add(new dialogueStruct(0, "adf", "wow hi"));
+        // a.Add(new dialogueStruct(0, "bob", "yo whats up"));
+        // a.Add(new dialogueStruct(0, "adf", "yo fsadfaksdfjk up"));
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if(active) {
-            if(Input.GetKeyDown("space"))
-            {
-                if(currentScript.Count != 0) {
-                    UpdateDialogue(currentScript[0]);
-                    currentScript.RemoveAt(0);
-                } else {
-                    gameObject.SetActive(false);
-                }
-            }
-        // }
-        
+        if(Input.GetKeyDown("space") && isActive)
+        {
+            NextDialogue();
+        }
     }
 
-    void LoadDialogue(List<dialogueStruct> toLoad) {
-        gameObject.SetActive(true);
+    public void LoadDialogue(List<dialogueStruct> toLoad) {
+        active.SetActive(true);
         currentScript = toLoad;
+        isActive = true;
+        NextDialogue();
+    }
+
+    void NextDialogue(){
+        if(currentScript.Count != 0) {
+            UpdateDialogue(currentScript[0]);
+            currentScript.RemoveAt(0);
+        } else {
+            active.SetActive(false);
+            player.InDialogue = false;
+            isActive = false;
+        }
     }
 
     void UpdateDialogue(int sprite, string name, string body) {
