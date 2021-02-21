@@ -27,7 +27,6 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        playerObject = GameObject.Find("Player");
     }
 
     void FixedUpdate()

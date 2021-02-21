@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float dampMove;
     public Vector3 PlayerPos;
     public bool Possessioning = false;
+    public bool exitedDialogue = false;
     public bool InDialogue = false;
     public Interactive possessed;
     // public Animator animator;
@@ -45,35 +46,44 @@ public class PlayerController : MonoBehaviour
             //still need to change the Interactive Possessed bool
         }
 
+       
     }
 
     void FixedUpdate()
     {
-        float vertical = Input.GetAxisRaw("Vertical");
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        
-        
-
-        input = new Vector2(horizontal, vertical);
-        Vector3 velocity = rb.velocity;
-
-        input = input.normalized;
-
-        Vector2 targetVelocity = input * maxMove;
-        Vector2 deltaVelocity = targetVelocity - new Vector2(velocity.x, velocity.y);
-
-        if (input.magnitude > 0)
-        {
-            deltaVelocity *= accMove;
-            rb.AddForce(deltaVelocity.x, deltaVelocity.y, 0);
-        }
-        else
-        {
-            deltaVelocity *= dampMove;
-            rb.AddForce(deltaVelocity.x, deltaVelocity.y, 0);
+        if (exitedDialogue) {
+            InDialogue = false;
+            exitedDialogue = false;
         }
 
-        rb.velocity = velocity;
+        if(!InDialogue) {
+            float vertical = Input.GetAxisRaw("Vertical");
+            float horizontal = Input.GetAxisRaw("Horizontal");
+
+            input = new Vector2(horizontal, vertical);
+            Vector3 velocity = rb.velocity;
+
+            input = input.normalized;
+
+            Vector2 targetVelocity = input * maxMove;
+            Vector2 deltaVelocity = targetVelocity - new Vector2(velocity.x, velocity.y);
+
+            if (input.magnitude > 0)
+            {
+                deltaVelocity *= accMove;
+                rb.AddForce(deltaVelocity.x, deltaVelocity.y, 0);
+            }
+            else
+            {
+                deltaVelocity *= dampMove;
+                rb.AddForce(deltaVelocity.x, deltaVelocity.y, 0);
+            }
+
+            rb.velocity = velocity;
+        }
+        else {
+            rb.velocity = new Vector3(0,0,0);
+        }
     }
     
     public void Possession()

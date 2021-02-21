@@ -27,7 +27,7 @@ public class DialogueController : MonoBehaviour
     
     public bool isActive = false;
     private List<dialogueStruct> currentScript = new List<dialogueStruct>();
-
+    private int index;
     public GameObject active;
     // Start is called before the first frame update
     void Start()
@@ -56,13 +56,15 @@ public class DialogueController : MonoBehaviour
     }
 
     void NextDialogue(){
-        if(currentScript.Count != 0) {
-            UpdateDialogue(currentScript[0]);
-            currentScript.RemoveAt(0);
+        if(index < currentScript.Count) {
+            UpdateDialogue(currentScript[index]);
+            index++;
         } else {
             active.SetActive(false);
-            player.InDialogue = false;
+            currentScript = new List<dialogueStruct>();
+            player.exitedDialogue = true;
             isActive = false;
+            index = 0;
         }
     }
 
