@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public bool Possessioning = false;
     public bool exitedDialogue = false;
     public bool InDialogue = false;
+
     public Interactive possessed;
     // public Animator animator;
 
@@ -90,7 +91,5 @@ public class PlayerController : MonoBehaviour
     {
         gameObject.GetComponentInChildren<Renderer>().enabled = false;
         Possessioning = true;
-        
-
     }
 }

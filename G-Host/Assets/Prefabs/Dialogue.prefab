@@ -163,10 +163,37 @@ MonoBehaviour:
   nameText: {fileID: 3695430744296517138}
   bodyText: {fileID: 3695430743751568765}
   player: {fileID: 0}
-  icons:
-  - {fileID: 21300000, guid: 0a016ff040da429448171eaeefafcc72, type: 3}
+  scene: Scenes/Test/MapTest
   isActive: 0
-  active: {fileID: 0}
+  currentScript: []
+  failedScript:
+  - sprite: 1
+    nameText: GHOST
+    bodyText: Hello?
+  - sprite: 0
+    nameText: GHOST
+    bodyText: (...It doesn't seem like she can see or hear me.)
+  successScript:
+  - sprite: 4
+    nameText: GRANNY
+    bodyText: Good afternoon, dear.
+  - sprite: 0
+    nameText: GHOST
+    bodyText: (!! She's looking at me. I haven't talked to anyone in so long, what
+      should I do...)
+  - sprite: 4
+    nameText: GRANNY
+    bodyText: My, what a lovely smell of ramen.
+  - sprite: 1
+    nameText: GHOST
+    bodyText: T-T-T-T-T-T-T-T-T-T-T-T-T-T-Thanks..... Y-Y-Y-Y_You too...
+  - sprite: 4
+    nameText: GRANNY
+    bodyText: That is the sweetest thing anyone's said to me all day! Ohohoho!
+  isEnd: 0
+  cutscene: 1
+  cutsceneid: 0
+  active: {fileID: 2389354023571781279}
 --- !u!1 &3695430743628747261
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3695430743628747261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6, y: -3.65, z: 0}
+  m_LocalPosition: {x: -3.6, y: -3.65, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 975868578896680354}
@@ -485,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.68235296, b: 0.78823537, a: 1}
+  m_Color: {r: 0.6320754, g: 0.62270504, b: 0.20572266, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -497,7 +524,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 150
+    m_MaxSize: 200
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class dialogueStruct
@@ -21,22 +22,42 @@ public class DialogueController : MonoBehaviour
     public SpriteRenderer profile_icon;
     public UnityEngine.UI.Text nameText;
     public UnityEngine.UI.Text bodyText;
-
     public PlayerController player;
-    public Sprite[] icons;
-    
+    public string scene;
+
     public bool isActive = false;
-    private List<dialogueStruct> currentScript = new List<dialogueStruct>();
-    private int index;
+    public List<dialogueStruct> currentScript = new List<dialogueStruct>();
+    public List<dialogueStruct> failedScript;
+    public List<dialogueStruct> successScript;
+    public bool isEnd = false;
+    public bool cutscene = false;
+    public int cutsceneid = -1;
+    private int index = 0;
     public GameObject active;
     // Start is called before the first frame update
     void Start()
     {
-
-        // List<dialogueStruct> a = new List<dialogueStruct>();
-        // a.Add(new dialogueStruct(0, "adf", "wow hi"));
-        // a.Add(new dialogueStruct(0, "bob", "yo whats up"));
-        // a.Add(new dialogueStruct(0, "adf", "yo fsadfaksdfjk up"));
+        if(cutscene) {
+            isActive = true;
+            if(!isEnd) {
+                if(Conditions.conditions.possessed) {
+                    currentScript = successScript;
+                }
+                else {
+                    currentScript = failedScript;
+                }
+            } else {
+                if(Conditions.conditions.isCat) {
+                    currentScript = successScript;
+                    Conditions.conditions.cutscenes[cutsceneid] = true;
+                }
+                else {
+                    currentScript = failedScript;
+                }
+            }
+            NextDialogue();
+        }
+        
     }
 
     // Update is called once per frame
@@ -59,7 +80,11 @@ public class DialogueController : MonoBehaviour
         if(index < currentScript.Count) {
             UpdateDialogue(currentScript[index]);
             index++;
-        } else {
+        } 
+        else if (scene != ""){
+            SceneManager.LoadScene(scene);
+        } 
+        else {
             active.SetActive(false);
             currentScript = new List<dialogueStruct>();
             player.exitedDialogue = true;
@@ -69,12 +94,12 @@ public class DialogueController : MonoBehaviour
     }
 
     void UpdateDialogue(int sprite, string name, string body) {
-        profile_icon.sprite = icons[sprite];
+        profile_icon.sprite = Conditions.conditions.icons[sprite];
         nameText.text = name;
         bodyText.text = body;
     }
     void UpdateDialogue(dialogueStruct d) {
-        profile_icon.sprite = icons[d.sprite];
+        profile_icon.sprite = Conditions.conditions.icons[d.sprite];
         nameText.text = d.nameText;
         bodyText.text = d.bodyText;
     }

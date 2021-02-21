@@ -75,7 +75,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.38, y: 0.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -143,9 +143,12 @@ MonoBehaviour:
   Possessed: 0
   InterPos: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  ghostDialogue: []
   dialogue: []
   scene: Scenes/Test/StillTest
   isDoor: 1
+  isPossessable: 1
+  solved: 0
 --- !u!54 &6634341548117516333
 Rigidbody:
   m_ObjectHideFlags: 0
