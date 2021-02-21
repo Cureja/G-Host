@@ -1,21 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Interactive : MonoBehaviour
 {
+    private DialogueController dialogueController;
     public SpriteRenderer sprite;
     public bool Possessed = false;
     public Vector3 InterPos;
     public PlayerController player;
-
-
+    public List<dialogueStruct> dialogue;
+    public string scene;
+    public bool isDoor = false;
+    public bool isPossessable = true;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        dialogueController = GameObject.Find("Dialogue").GetComponent<DialogueController>();
     }
 
     // Update is called once per frame
@@ -29,10 +33,20 @@ public class Interactive : MonoBehaviour
 
     public void Interacted()
     {
-        sprite.color = Color.green;
-        Possessed = true;
-        InterPos = transform.position;
-        gameObject.transform.parent.gameObject.GetComponent<Collider>().enabled = false;
+        if(isDoor) {
+            SceneManager.LoadScene(scene);
+        } 
+        else if (isPossessable && player.Possessioning != true) {
+            player.Possession();
+            sprite.color = Color.green;
+            Possessed = true;
+            InterPos = transform.position;
+            gameObject.transform.parent.gameObject.GetComponent<Collider>().enabled = false;
+        } 
+        else if(player.Possessioning == true && dialogue.Count > 0 && !player.InDialogue) {
+            dialogueController.LoadDialogue(dialogue);
+            player.InDialogue = true;
+        }
     }
 
     public void Unpossessed()

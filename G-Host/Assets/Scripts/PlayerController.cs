@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float dampMove;
     public Vector3 PlayerPos;
     public bool Possessioning = false;
+    public bool InDialogue = false;
+    public Interactive possessed;
     // public Animator animator;
 
     Vector2 input;
@@ -34,12 +36,12 @@ public class PlayerController : MonoBehaviour
             PlayerPos = transform.position;
         }
 
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("e") && Possessioning == true)
         {
             gameObject.GetComponent<Collider>().enabled = true;
             Possessioning = false;
             gameObject.GetComponentInChildren<Renderer>().enabled = true;
-            f.tryUnpossess();
+            possessed.Unpossessed();
             //still need to change the Interactive Possessed bool
         }
 
