@@ -41,7 +41,10 @@ public class DialogueController : MonoBehaviour
             isActive = true;
             if(!isEnd) {
                 if(Conditions.conditions.possessed) {
+                    Conditions.conditions.cutscenes[cutsceneid] = true;
                     currentScript = successScript;
+                    Conditions.conditions.possessed = false;
+                    
                 }
                 else {
                     currentScript = failedScript;
@@ -49,7 +52,7 @@ public class DialogueController : MonoBehaviour
             } else {
                 if(Conditions.conditions.isCat) {
                     currentScript = successScript;
-                    Conditions.conditions.cutscenes[cutsceneid] = true;
+                    
                 }
                 else {
                     currentScript = failedScript;

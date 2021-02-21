@@ -7,6 +7,7 @@ public class Conditions : MonoBehaviour
     public static Conditions conditions;
     public bool possessed = false;
     public bool isCat = false;
+    public Vector3 playerloc;
     //public static int catsPetted =0;
     public bool[] npcIsDazed;
 

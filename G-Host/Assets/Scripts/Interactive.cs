@@ -35,6 +35,7 @@ public class Interactive : MonoBehaviour
     public void Interacted()
     {
         if(isDoor) {
+            Conditions.conditions.playerloc = player.PlayerPos;
             SceneManager.LoadScene(scene);
         } 
         else if (isPossessable && player.Possessioning != true) {

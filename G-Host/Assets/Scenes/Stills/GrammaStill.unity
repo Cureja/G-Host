@@ -200,7 +200,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &605496482
 GameObject:
@@ -306,221 +306,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &4913647910426944431
+--- !u!1001 &2074414619
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3695430743602413308, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413308, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: m_Name
       value: Dialogue
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413309, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: scene
-      value: Scenes/Test/MapTest
+      value: Scenes/Test/MapTesten
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: cutscene
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: cutsceneid
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: failedScript.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: failedScript.Array.data[0].sprite
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[0].sprite
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[2].sprite
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[3].sprite
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[4].sprite
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: failedScript.Array.data[0].bodyText
-      value: Hello?
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: failedScript.Array.data[0].nameText
-      value: GHOST
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: failedScript.Array.data[1].bodyText
-      value: (...It doesn't seem like she can see or hear me.)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: failedScript.Array.data[1].nameText
-      value: GHOST
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[0].bodyText
-      value: Good afternoon, dear.
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[0].nameText
-      value: GRANNY
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[1].bodyText
-      value: (!! She's looking at me. I haven't talked to anyone in so long, what
-        should I do...)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[1].nameText
-      value: GHOST
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[2].bodyText
-      value: My, what a lovely smell of ramen.
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[2].nameText
-      value: GRANNY
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[3].bodyText
-      value: T-T-T-T-T-T-T-T-T-T-T-T-T-T-Thanks..... Y-Y-Y-Y_You too...
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[3].nameText
-      value: GHOST
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[4].bodyText
-      value: That is the sweetest thing anyone's said to me all day! Ohohoho!
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413309, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: successScript.Array.data[4].nameText
-      value: GRANNY
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413310, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413310, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413310, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413310, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413310, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413310, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413310, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413310, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413310, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413310, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413310, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413310, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413310, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413310, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413310, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413310, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413310, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413310, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413310, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413310, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430743602413310, guid: 3155b12617e78dd41bad2b5315b078f7,
+    - target: {fileID: 3695430743602413310, guid: e86ef5584eeb0d64b809bc4fefc52417,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3695430744296517138, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.20572266
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430744296517138, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.62270504
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430744296517138, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.6320754
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695430744296517138, guid: 3155b12617e78dd41bad2b5315b078f7,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 200
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3155b12617e78dd41bad2b5315b078f7, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: e86ef5584eeb0d64b809bc4fefc52417, type: 3}
 --- !u!1001 &8291608043535671144
 PrefabInstance:
   m_ObjectHideFlags: 0

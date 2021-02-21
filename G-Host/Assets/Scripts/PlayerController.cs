@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        transform.position = Conditions.conditions.playerloc;
         maxMove = maxMove > 0 ? maxMove : 1; 
         accMove = accMove > 0 ? accMove : 1;
     }
@@ -33,10 +34,8 @@ public class PlayerController : MonoBehaviour
             f.tryInteract();
         }
 
-        if (Possessioning == true)
-        {
-            PlayerPos = transform.position;
-        }
+        PlayerPos = transform.position;
+
 
         if (Input.GetKeyDown("e") && Possessioning == true)
         {
@@ -91,5 +90,6 @@ public class PlayerController : MonoBehaviour
     {
         gameObject.GetComponentInChildren<Renderer>().enabled = false;
         Possessioning = true;
+        Conditions.conditions.possessed = true;
     }
 }
