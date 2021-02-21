@@ -142,6 +142,8 @@ MonoBehaviour:
   dampMove: 14.2
   PlayerPos: {x: 0, y: 0, z: 0}
   Possessioning: 0
+  InDialogue: 0
+  possessed: {fileID: 0}
 --- !u!1 &938821981943278116
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938821981943278116}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 938821980692004823}
@@ -217,7 +219,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.86, y: 2.56}
+  m_Size: {x: 0.89, y: 1.23}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
