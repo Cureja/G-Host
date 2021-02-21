@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct dialogueStruct
+[System.Serializable]
+public class dialogueStruct
 {
+    public int sprite;
+    public string nameText;
+    public string bodyText;
     public dialogueStruct(int s, string name, string body)
     {
         sprite = s;
@@ -11,11 +15,6 @@ public struct dialogueStruct
         bodyText = body;
     }
 
-    public int sprite{ get; }
-    public string nameText { get; }
-    public string bodyText { get; }
-
-    public override string ToString()  => $"({sprite}, {nameText})";
 }
 
 public class DialogueController : MonoBehaviour
