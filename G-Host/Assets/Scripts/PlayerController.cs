@@ -9,22 +9,40 @@ public class PlayerController : MonoBehaviour
     public float maxMove;
     public float accMove;
     public float dampMove;
-
+    public Vector3 PlayerPos;
+    public bool Possessioning = false;
     // public Animator animator;
 
     Vector2 input;
 
     void Start()
     {
-        maxMove = maxMove > 0 ? maxMove : 1;
+        maxMove = maxMove > 0 ? maxMove : 1; 
         accMove = accMove > 0 ? accMove : 1;
     }
 
-    void Update(){
-        if(Input.GetKeyDown("space"))
+    void Update()
+    {
+
+        if (Input.GetKeyDown("space"))
         {
-            f.tryInteract(); 
+            f.tryInteract();
         }
+
+        if (Possessioning == true)
+        {
+            PlayerPos = transform.position;
+        }
+
+        if (Input.GetKeyDown("e"))
+        {
+            gameObject.GetComponent<Collider>().enabled = true;
+            Possessioning = false;
+            gameObject.GetComponentInChildren<Renderer>().enabled = true;
+            f.tryUnpossess();
+            //still need to change the Interactive Possessed bool
+        }
+
     }
 
     void FixedUpdate()
@@ -56,5 +74,11 @@ public class PlayerController : MonoBehaviour
         rb.velocity = velocity;
     }
     
-    
+    public void Possession()
+    {
+        gameObject.GetComponentInChildren<Renderer>().enabled = false;
+        Possessioning = true;
+        
+
+    }
 }
